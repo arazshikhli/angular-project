@@ -1,0 +1,17 @@
+<div class="cart">
+  <div class="cart_selected-drugs">
+    <div class="selected-drugs_drug" >
+      <h1>Cart component</h1>
+      <div class="cart_summary">
+        <div *ngFor="let a of drug.drug|cartPipe">
+          <div class="card">
+            <p>{{a.name}}</p>
+            <p>{{a.price}}</p>
+            <p>{{a.count}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

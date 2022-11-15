@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="left-bar">
+    <p> С рецептом <input type="checkbox" [(ngModel)]="isChecked"></p>
+  </div>
+  <div class="content">
+    <div class="inner-container">
+      <input class="input" type="text" placeholder="Введите название преппарата (продукта)" [(ngModel)]="drugName" (input)="myFunc()">
+      <p> С рецептом <input type="checkbox" [(ngModel)]="isChecked"></p>
+    </div>
+    <div class="card-container"><div *ngFor="let a of d1|filter:isChecked|filter2 :drugName|slice:0:drugSwitcher; let i =index " >
+      <div class="card">
+        <div class="image-container"> <img [src]="a.img"></div>
+        <div class="title-container">
+          <h3>{{a.name}}</h3>
+          <p>{{a.price|currency:"AZN"}}</p>
+          <small *ngIf="a.byPrescription===true; else elseBlock">По рецепту врача</small>
+          <ng-template #elseBlock> <small>Без рецепта</small></ng-template>
+          <button class="btn" (click)="buyDrug(i)">В корзину</button>
+        </div>
+      </div>
+    </div>
+    </div>
+    <button class="show-more-btn" (click)="ShowMore()">Show More</button>
+  </div>
+  <div class="right-bar">
+
+  </div>
+</div>
+
+
+
+
+
+

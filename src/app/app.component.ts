@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {DrugService} from "./services/drug.service";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'routing-pharm';
+  title = '';
+  constructor(public drug:DrugService) {
+  }
+
+  getSwitch(str:string) {
+   this.title=str
+  }
 }

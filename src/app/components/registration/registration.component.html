@@ -1,0 +1,51 @@
+<div class="registration-inner">
+  <h1>Панель регистрации</h1>
+
+    <form class="input-form" [formGroup]="form" (ngSubmit)="submit()">
+      <div class="input-cont">
+        <input type="text" placeholder="Введите ваше имя" class="input" formControlName="name">
+        <div *ngIf="form.get('name')?.invalid && form.get('name')?.touched"
+          class="validation"
+        > <small class="error" *ngIf="form.get('name')?.errors?.['minLength']">Введите
+          корректное имя.</small>
+        <small class="error" *ngIf="form.get('name')?.errors?.['required']">
+          Поле 'Имя' не может быть пустым
+        </small>
+        </div>
+      </div>
+      <div class="input-cont"><input type="text" placeholder="Введите вашу фамилию" class="input" formControlName="surname">
+        <div *ngIf="form.get('surname')?.invalid && form.get('surname')?.touched"
+             class="validation"
+        > <small class="error">Поле 'Фамилия' не может быть пустым. Введите
+          корректную фамилию</small></div>
+      </div>
+
+      <div class="input-cont"><input type="date" class="input" formControlName="dateOfBirth">
+
+      </div>
+
+      <div class="input-cont"><input type="email" placeholder="Введите ваш email"class="input" formControlName="email">
+        <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
+             class="validation"
+        > <small class="error" >Поле 'email' не может быть пустым. Введите
+          корректный email</small></div>
+      </div>
+
+      <div class="input-cont"><input type="password" placeholder="Создайте ваш пароль"class="input" formControlName="password">
+        <div *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
+             class="validation"
+        > <small class="error">Поле 'пароль' не может быть пустым. Введите
+          корректный пароль</small></div></div>
+
+      <div class="input-cont"><input type="tel" placeholder="Введите мобильный" class="input" formControlName="phone">
+        <div *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
+             class="validation"
+        > <small class="error">Поле 'номер' не может быть пустым. Введите
+          корректный номер</small></div></div>
+
+      <div class="input-cont"><input type="checkbox" class="checkbox-input" name="checkbox" formControlName="submit" > <a class="license-link" (click)="goToLicense()">Я согласен с условиями пользования </a> </div>
+   <div class="input-cont"><button type="submit" [disabled]="form.invalid" >Отправить </button></div>
+
+    </form>
+
+</div>

@@ -1,0 +1,94 @@
+
+.registration-inner{
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid gray;
+  background-color: antiquewhite;
+}
+.form-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+}
+.input-form{
+  width: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+  .input{
+    height: 50px;
+    margin-top: 1rem;
+    color: #260101;
+    font-size: 20px;
+
+  }
+.checkbox-input{
+    width: 20px;
+    height: 20px;
+  }
+  .input-submit{
+    width: 50%;
+    color: #cccccc;
+    background-color: #1f231f;
+    height: 50px;
+    cursor: pointer;
+    font-size: 2rem;
+    transition: all 0.5s;
+    border: 1px solid gray;
+    &:hover{
+      background-color: #cccccc;
+      color: #333333;
+    }
+  }
+}
+a{
+  text-decoration: none;
+  padding-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #03030e;
+  transition: all 0.7s;
+  &:hover{
+    color: #9b410a;
+    font-weight: bold;
+  }
+}
+input{
+  &.ng-invalid.ng-touched{
+    border:1px solid red
+  }
+  &.ng-valid{
+    border:1px solid gray;
+  }
+}
+.input-cont{
+  width: 50%;
+  input{
+    width: 100%;
+  }
+  .error{
+    color: red;
+  }
+ button{
+   width: 100%;
+   height: 40px;
+   font-size: 1.5rem;
+   border: 1px solid gray;
+   transition: all 0.6s;
+   margin: 1.5rem 0 1.5rem 0;
+   &:hover{
+
+   }
+ }
+}
+.checkbox-input{
+  margin:1rem 1rem 0 0 ;
+}
+.license-link{
+  cursor: pointer;
+}
