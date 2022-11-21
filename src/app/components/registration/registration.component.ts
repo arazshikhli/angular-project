@@ -9,6 +9,7 @@ import {Router} from "@angular/router";
 })
 export class RegistrationComponent implements OnInit {
 
+  licenseCheck=false
    form!:FormGroup
   constructor(private router:Router) { }
 
@@ -25,7 +26,9 @@ export class RegistrationComponent implements OnInit {
           Validators.required,
           Validators.minLength(8)
         ]),
-      phone:new FormControl(null,[Validators.minLength(9)])
+
+      dateOfBirth:new FormControl(null,Validators.required)
+
     })
   }
   submit() {

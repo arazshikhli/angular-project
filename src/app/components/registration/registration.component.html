@@ -1,6 +1,5 @@
 <div class="registration-inner">
   <h1>Панель регистрации</h1>
-
     <form class="input-form" [formGroup]="form" (ngSubmit)="submit()">
       <div class="input-cont">
         <input type="text" placeholder="Введите ваше имя" class="input" formControlName="name">
@@ -37,14 +36,13 @@
         > <small class="error">Поле 'пароль' не может быть пустым. Введите
           корректный пароль</small></div></div>
 
-      <div class="input-cont"><input type="tel" placeholder="Введите мобильный" class="input" formControlName="phone">
+      <div class="input-cont"><input type="tel" placeholder="Введите мобильный" class="input"  mask="+(000)-00-000-00-00">
         <div *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
              class="validation"
         > <small class="error">Поле 'номер' не может быть пустым. Введите
           корректный номер</small></div></div>
-
-      <div class="input-cont"><input type="checkbox" class="checkbox-input" name="checkbox" formControlName="submit" > <a class="license-link" (click)="goToLicense()">Я согласен с условиями пользования </a> </div>
-   <div class="input-cont"><button type="submit" [disabled]="form.invalid" >Отправить </button></div>
+      <div class="input-cont"><input type="checkbox" class="checkbox-input" name="checkbox" [(ngModel)]="licenseCheck">В целях получения услуг я согласен с <a class="license-link" (click)="goToLicense()">пользовательским соглашением  </a> и даю согласие на обработку моих персональных данных. </div>
+   <div class="input-cont"><button class="input-submit" type="submit" [disabled]="form.invalid" >Отправить </button></div>
 
     </form>
 

@@ -1,4 +1,9 @@
 import { Injectable } from '@angular/core';
+export interface DrugCount {
+  drug:Drug
+  count:number
+
+}
 export interface Drug{
   id:number
   name:string
@@ -41,5 +46,13 @@ export class DrugService {
     {count:0,id:23,name:"Tempalgin",price:33,img:'assets/drugs/tempalgin.jpg',byPrescription:false},
     {count:0,id:24,name:"Tempalgin",price:33,img:'assets/drugs/tempalgin.jpg',byPrescription:false},
   ]
+
   constructor() { }
+ public drugCounter():number{
+    let count=0
+    for (let d of this.drug){
+      count+=d.count
+    }
+    return count
+ }
 }

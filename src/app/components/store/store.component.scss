@@ -24,16 +24,22 @@
     .card{
       background-color: white;
     }
-    .card-container{
+    .inner-container{
       display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
+
   }
 }
 .card-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   .card{
     width: 200px;
     height: 300px;

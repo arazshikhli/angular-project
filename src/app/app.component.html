@@ -10,7 +10,9 @@
         <li  routerLinkActive="active"> <a [routerLink]="['/registration']">Регистрация</a></li>
         <li> <button class="btn">Войти</button></li>
         <li> <button class="btn">Выйти</button></li>
-        <li  routerLinkActive="active"> <a [routerLink]="['/cart']"><img src="assets/shopping-cart.png"></a></li>
+        <li  routerLinkActive="active" > <a [routerLink]="['/cart']"><img src="assets/shopping-cart.png"></a>
+          <span class="counter">{{drug.drugCounter()}}</span>
+           </li>
       </ul>
     </div>
   </nav>

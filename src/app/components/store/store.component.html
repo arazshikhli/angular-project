@@ -15,7 +15,8 @@
           <p>{{a.price|currency:"AZN"}}</p>
           <small *ngIf="a.byPrescription===true; else elseBlock">По рецепту врача</small>
           <ng-template #elseBlock> <small>Без рецепта</small></ng-template>
-          <button class="btn" (click)="buyDrug(i)">В корзину</button>
+          <div> <button> add</button>
+            <button class="btn" (click)="buyDrug(i)" (click)="hideBtn()">В корзину</button></div>
         </div>
       </div>
     </div>

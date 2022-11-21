@@ -13,6 +13,7 @@ export class StoreComponent implements OnInit {
   isChecked=false
   constructor(public myDrug:DrugService) { }
   d1:Drug[]=this.myDrug.drug
+  selectedDrug!:Drug[]
   ngOnInit(): void {
   }
   myFunc() {
@@ -24,8 +25,13 @@ export class StoreComponent implements OnInit {
         a.count++;
       }
     }
+
   }
   ShowMore() {
     this.drugSwitcher=this.drugSwitcher+10
+  }
+
+  hideBtn() {
+
   }
 }

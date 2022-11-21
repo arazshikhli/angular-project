@@ -1,6 +1,5 @@
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -14,6 +13,11 @@ import { LicenseComponent } from './components/license/license.component';
 import { CartComponent } from './components/cart/cart.component';
 import { Filter2Pipe } from './pipes/filter2.pipe';
 import { CartPipePipe } from './pipes/cart-pipe.pipe';
+import {NgxMaskModule} from "ngx-mask";
+import {AngularFireModule}from '@angular/fire/compat'
+import {environment} from "../environments/environment";
+import { LoginComponent } from './components/login/login.component';
+import '@angular/common/locales/global/fr';
 
 
 @NgModule({
@@ -29,6 +33,7 @@ import { CartPipePipe } from './pipes/cart-pipe.pipe';
     CartComponent,
     Filter2Pipe,
     CartPipePipe,
+    LoginComponent,
 
   ],
   imports: [
@@ -36,7 +41,9 @@ import { CartPipePipe } from './pipes/cart-pipe.pipe';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxMaskModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
   bootstrap: [AppComponent]

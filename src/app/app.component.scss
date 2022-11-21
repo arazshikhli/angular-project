@@ -11,6 +11,7 @@ body{
   color:#333;
   background-color: #fff;
 }
+.router{width: 100%}
 .root{
   display: flex;
   flex-direction: column;
@@ -115,3 +116,7 @@ display: flex;
     color: black;
   }
 }
+app-cart{
+  width: 100%;
+}
+
