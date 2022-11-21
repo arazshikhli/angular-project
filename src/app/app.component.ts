@@ -11,7 +11,7 @@ export class AppComponent {
   title = '';
   counter=0
   constructor(public drug:DrugService) {
-
+    this.drug.loadDrugs();
   }
 
   getSwitch(str:string) {

@@ -1,23 +1,31 @@
 <div class="cart-container">
-<div class="inner-container">
-  <div *ngIf="drug.drugCounter()>0;else drugCount" style="width: 100%">
-    <h1>Корзина: {{drug.drugCounter()}} товара(ов)</h1>
-      <div class="cart-content" *ngFor="let d of drug.drug| cartPipe;let a=index">
-        <p><img [src]="d.img"></p>
-        <p >{{d.name}}</p>
-        <p >{{d.price|currency:'AZN ':'symbol':'2.2-2':'fr'}} </p>
-        <button (click)="CountMinus(a)">-</button>
-        <p >{{d.count}}</p>
-        <button (click)="CountPlus(a)">+</button>
-        <p>{{d.count*d.price|currency:'AZN':'symbol':'2.2-2':'fr'}}</p>
-      </div>
+  <div class="inner-container">
+    <div
+      *ngIf="drugService.drugCounter > 0; else drugCount"
+      style="width: 100%"
+    >
+      <h1>Корзина: {{ drugService.drugCounter }} товара(ов)</h1>
+      <ng-container
+        *ngFor="let d of drugService.drugs; let a = index"
+      >
+        <div 
+        class="cart-content" *ngIf="d.count > 0">
+          <p><img [src]="d.img" /></p>
+          <p>{{ d.name }}</p>
+          <p>{{ d.price | currency: "AZN ":"symbol":"2.2-2":"fr" }}</p>
+          <button (click)="CountMinus(a)">-</button>
+          <p>{{ d.count }}</p>
+          <button (click)="CountPlus(a)">+</button>
+          <p>{{ d.count * d.price | currency: "AZN":"symbol":"2.2-2":"fr" }}</p>
+        </div>
+      </ng-container>
+    </div>
+    <div class="cart-summary_info">
+      {{ drugService.drugCounter }}
+    </div>
   </div>
-  <div class="cart-summary_info">
-    {{drug.drugCounter()}}
-  </div>
-</div>
 
-  <ng-template #drugCount> <p><button (click)="goToStore()"> К списку</button></p></ng-template>
-
-
+  <ng-template #drugCount>
+    <p><button (click)="goToStore()">К списку</button></p></ng-template
+  >
 </div>

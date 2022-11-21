@@ -1,23 +1,41 @@
 <div class="root">
   <nav class="nav-bar">
-    <div class="logo-container"  routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">  <a [routerLink]="['/']" >Pharma Delivery </a></div>
+    <div
+      class="logo-container"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a [routerLink]="['/']">Pharma Delivery </a>
+    </div>
     <div class="nav-inner">
       <ul>
-        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"> <a [routerLink]="['/']">Главная</a></li>
-        <li  routerLinkActive="active"> <a [routerLink]="['/partners']">Все аптеки</a></li>
-        <li  routerLinkActive="active"> <a [routerLink]="['/store']">Список преппаратов</a></li>
-        <li  routerLinkActive="active"> <a [routerLink]="['/contacts']">Связаться с нами</a></li>
-        <li  routerLinkActive="active"> <a [routerLink]="['/registration']">Регистрация</a></li>
-        <li> <button class="btn">Войти</button></li>
-        <li> <button class="btn">Выйти</button></li>
-        <li  routerLinkActive="active" > <a [routerLink]="['/cart']"><img src="assets/shopping-cart.png"></a>
-          <span class="counter">{{drug.drugCounter()}}</span>
-           </li>
+        <li
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a [routerLink]="['/']">Главная</a>
+        </li>
+        <li routerLinkActive="active">
+          <a [routerLink]="['/partners']">Все аптеки</a>
+        </li>
+        <li routerLinkActive="active">
+          <a [routerLink]="['/store']">Список преппаратов</a>
+        </li>
+        <li routerLinkActive="active">
+          <a [routerLink]="['/contacts']">Связаться с нами</a>
+        </li>
+        <li routerLinkActive="active">
+          <a [routerLink]="['/registration']">Регистрация</a>
+        </li>
+        <li><button class="btn">Войти</button></li>
+        <li><button class="btn">Выйти</button></li>
+        <li routerLinkActive="active">
+          <a [routerLink]="['/cart']"><img src="assets/shopping-cart.png" /></a>
+          <span class="counter">{{ drug.drugCounter }}</span>
+        </li>
       </ul>
     </div>
   </nav>
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </div>
-<div>
-
-</div>
+<div></div>
